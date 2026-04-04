@@ -1,0 +1,288 @@
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-600: #1e40af;
+  --border: #e6e9ef;
+  --radius: 10px;
+  --gap: 1rem;
+  --max-width: 1300px;
+  --sidebar-w: 280px;
+  --shadow: 0 6px 18px rgba(17,24,39,0.06);
+  --text: #0f172a;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Reset and basics */
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  padding:1.25rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.25rem;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Page wrapper */
+.layout{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  gap:var(--gap);
+  align-items:flex-start;
+}
+
+/* Topbar */
+.topbar{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  gap:var(--gap);
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  padding:0.75rem 1rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:0.125rem;
+}
+.brand h1{
+  margin:0;
+  font-size:1.125rem;
+  letter-spacing: -0.02em;
+}
+.brand .tag{
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+/* Toolbar: demonstrates flex with spacing and alignment */
+.toolbar{
+  display:flex;
+  gap:0.75rem;
+  align-items:center;
+  flex:1;
+  justify-content:flex-end;
+}
+
+/* Search grows, keeps others compact */
+.search{
+  display:flex;
+  flex:1 1 320px;
+}
+.search input{
+  width:100%;
+  padding:0.5rem 0.75rem;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,#fff,#fbfdff);
+}
+
+/* Controls (select + button) */
+.controls{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+}
+.controls select{
+  padding:0.45rem 0.5rem;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:white;
+}
+.btn{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:0.55rem 0.75rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+.btn-ghost{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text);
+}
+.btn-sm{padding:0.35rem 0.5rem; font-size:0.9rem}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar-w);
+  min-width:220px;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:0.9rem;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:0.9rem;
+  align-self:flex-start;
+  height:fit-content;
+}
+
+/* Sidebar sections */
+.sidebar-section h2{
+  margin:0 0 0.5rem 0;
+  font-size:0.95rem;
+}
+.stat-rows{
+  display:flex;
+  gap:0.6rem;
+  flex-direction:column;
+}
+.stat{
+  display:flex;
+  gap:0.6rem;
+  align-items:center;
+}
+.stat-value{
+  font-weight:700;
+  font-size:1.05rem;
+}
+.stat-label{color:var(--muted); font-size:0.9rem}
+
+/* Filters layout */
+.filter-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:0.25rem}
+.taglist{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tagbtn{
+  padding:0.3rem 0.5rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:transparent;
+  cursor:pointer;
+}
+.tagbtn.active{background:var(--accent);color:white;border-color:var(--accent-600)}
+
+.filter-actions{display:flex;gap:0.5rem;justify-content:flex-end;margin-top:0.5rem}
+
+/* Main content */
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+}
+
+/* Summary bar: flex layout between left & right */
+.summary-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  background:var(--card);
+  padding:0.7rem 0.9rem;
+  border-radius:10px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+/* Product grid: use flexbox to wrap cards responsively */
+.product-grid{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  padding:0;
+}
+
+/* Card: flexible width with min/max to create responsive grid */
+.card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  display:flex;
+  flex-direction:column;
+  width: calc(33.333% - 0.666rem); /* 3 columns default, minus gap compensation */
+  min-width:220px;
+}
+
+/* Make image cover top area and keep aspect ratio */
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  display:block;
+}
+
+/* Card body uses column flex layout to push actions down */
+.card-body{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+  padding:0.75rem;
+  flex:1 1 auto;
+}
+.product-title{
+  margin:0;
+  font-size:1rem;
+}
+.muted{color:var(--muted); font-size:0.9rem}
+.sku{margin-top:-0.2rem}
+
+.card-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.actions{margin-top:auto; gap:0.5rem}
+
+/* Footer */
+.footer{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Buttons & small helpers */
+.icon-btn{
+  padding:0.35rem 0.5rem;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:white;
+}
+
+/* Responsive breakpoints — Flexbox patterns change layout */
+@media (max-width:1100px){
+  .card{ width: calc(50% - 0.5rem); } /* 2 columns */
+  .sidebar{ display:none; } /* hide sidebar to preserve space — typical responsive pattern */
+  .layout{ gap:0.8rem; }
+}
+
+@media (max-width:720px){
+  body{ padding:0.75rem; }
+  .topbar{ flex-direction:column; align-items:stretch; gap:0.6rem; padding:0.65rem }
+  .toolbar{ justify-content:space-between; }
+  .layout{ flex-direction:column; }
+  .card{ width:100%; } /* single column cards on phones */
+  .search{ flex:1 1 auto; }
+  .controls{ gap:0.4rem; }
+}
+
+/* Accessibility focus */
+button:focus, input:focus, select:focus{
+  outline:3px solid rgba(37,99,235,0.15);
+  outline-offset:2px;
+}
+
+/* Small visual polish */
+.card .price{ font-weight:700; }
+.rating{ color:#f59e0b; }

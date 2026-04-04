@@ -1,0 +1,19 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Screen choti hone par cards neeche aa jayenge */
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    flex: 1; /* Equal width */
+    min-width: 250px;
+    height: 150px;
+    background: #d3d1d1;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+}

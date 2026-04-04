@@ -1,0 +1,20 @@
+.layout-grid {
+    display: grid;
+    /* Define a 3-column base */
+    grid-template-columns: repeat(3,1fr); 
+    gap: 15px;
+}
+
+.item {
+    background: #e67e22;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Make this specific item span across 2 column tracks */
+.wide {
+    grid-column: span 2; 
+    background: #141312; /* Darker color to highlight it */
+}

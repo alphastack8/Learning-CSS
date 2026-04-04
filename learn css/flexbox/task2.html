@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox E‑commerce Product Dashboard</title>
+  <link rel="stylesheet" href="task2.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>ShopBoard</h1>
+      <span class="tag">Admin Dashboard</span>
+    </div>
+
+    <div class="toolbar">
+      <label class="search">
+        <input type="search" placeholder="Search products, SKU, category..." aria-label="Search products"/>
+      </label>
+
+      <div class="controls">
+        <select aria-label="Sort products">
+          <option>Sort: Popular</option>
+          <option>Price: Low → High</option>
+          <option>Price: High → Low</option>
+          <option>Newest</option>
+        </select>
+
+        <button class="btn">Add Product</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-section stats">
+        <h2>Overview</h2>
+        <div class="stat-rows">
+          <div class="stat">
+            <div class="stat-value">1,240</div>
+            <div class="stat-label">Products</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">8,532</div>
+            <div class="stat-label">Orders</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$42.8k</div>
+            <div class="stat-label">Revenue</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section filters">
+        <h2>Filters</h2>
+
+        <div class="filter-group">
+          <label>Category
+            <select>
+              <option>All</option>
+              <option>Apparel</option>
+              <option>Electronics</option>
+              <option>Home</option>
+              <option>Beauty</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filter-group">
+          <label>Price Range
+            <input type="range" min="0" max="500" value="200" />
+          </label>
+        </div>
+
+        <div class="filter-group tags">
+          <strong>Tags</strong>
+          <div class="taglist">
+            <button class="tagbtn active">New</button>
+            <button class="tagbtn">Sale</button>
+            <button class="tagbtn">Bestseller</button>
+            <button class="tagbtn">Limited</button>
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button class="btn btn-ghost">Reset</button>
+          <button class="btn">Apply</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section help">
+        <h2>Tips</h2>
+        <p>Use the search or filters to quickly find products. Resize the window to see Flexbox responsiveness in action.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="summary-bar">
+        <div class="summary-left">
+          <h2>Products</h2>
+          <p class="muted">Showing 24 of 1,240 products</p>
+        </div>
+
+        <div class="summary-right">
+          <div class="view-toggle">
+            <button class="icon-btn" aria-pressed="true">Grid</button>
+            <button class="icon-btn">List</button>
+          </div>
+          <div class="density">
+            <label>Density
+              <input type="range" min="0" max="2" value="1" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-grid" aria-live="polite">
+        <!-- Product card template repeated -->
+        <!-- Using placeholder images from picsum.photos -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p1/400/300" alt="Product image 1" />
+          <div class="card-body">
+            <h3 class="product-title">Classic T‑shirt</h3>
+            <p class="muted sku">SKU: TS-1001</p>
+            <div class="card-row">
+              <div class="price">$24.99</div>
+              <div class="rating">⭐ 4.6</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p2/400/300" alt="Product image 2" />
+          <div class="card-body">
+            <h3 class="product-title">Wireless Headphones</h3>
+            <p class="muted sku">SKU: WH-540</p>
+            <div class="card-row">
+              <div class="price">$129.00</div>
+              <div class="rating">⭐ 4.8</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p3/400/300" alt="Product image 3" />
+          <div class="card-body">
+            <h3 class="product-title">Ceramic Mug</h3>
+            <p class="muted sku">SKU: CM-325</p>
+            <div class="card-row">
+              <div class="price">$12.50</div>
+              <div class="rating">⭐ 4.2</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- duplicate cards to show grid wrapping -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p4/400/300" alt="Product image 4" />
+          <div class="card-body">
+            <h3 class="product-title">Smart Lamp</h3>
+            <p class="muted sku">SKU: SL-400</p>
+            <div class="card-row">
+              <div class="price">$59.00</div>
+              <div class="rating">⭐ 4.7</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p5/400/300" alt="Product image 5" />
+          <div class="card-body">
+            <h3 class="product-title">Running Shoes</h3>
+            <p class="muted sku">SKU: RS-212</p>
+            <div class="card-row">
+              <div class="price">$89.00</div>
+              <div class="rating">⭐ 4.5</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p6/400/300" alt="Product image 6" />
+          <div class="card-body">
+            <h3 class="product-title">Scented Candle</h3>
+            <p class="muted sku">SKU: SC-888</p>
+            <div class="card-row">
+              <div class="price">$18.00</div>
+              <div class="rating">⭐ 4.4</div>
+            </div>
+            <div class="card-row actions">
+              <button class="btn btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm">Disable</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- repeat as needed to test wrapping -->
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> ShopBoard — Built with Flexbox</p>
+  </footer>
+
+  <script>
+    // small conveniences (no framework) — update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Universal Selector: Taake box model calculation asaan ho jaye */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container with Box Model concepts */
+.login-container {
+  background: white;
+  width: 90%;          /* Responsive width */
+  max-width: 400px;    /* Max limit */
+  padding: 2.5rem;     /* Root-based spacing */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Input Styling */
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Pseudo-class Selector */
+input:focus {
+  border-color: #4A90E2;
+}
+
+/* Button with Colors + Units */
+button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
